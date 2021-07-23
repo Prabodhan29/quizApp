@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Quiz App</title>
+  </head>
+  <body>
+    <div class="quiz_container">
+      <div class="quiz_content">
+        <h1 class="question">Question text</h1>
+        <ul>
+          <li>
+            <input type="radio" id="a" name="answer" class="answer1" value="a" />
+            <label for="a" id="optionA"> option A</label>
+          </li>
+          <li>
+            <input type="radio" id="b" name="answer" class="answer2" value="b" />
+            <label for="b" id="optionB"> option B</label>
+          </li>
+          <li>
+            <input type="radio" id="c" name="answer" class="answer" value="c" />
+            <label for="c" id="optionC"> option C</label>
+          </li>
+          <li>
+            <input type="radio" id="d" name="answer" class="answer" value="d" />
+            <label for="d" id="optionD"> option D</label>
+          </li>
+        </ul>
+      </div>
+      <button class="quiz_start_button" type="submit">
+        Click to start quiz
+      </button>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>
