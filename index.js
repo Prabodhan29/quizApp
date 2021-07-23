@@ -55,23 +55,22 @@ function loadQuestion() {
   $("#optionD").html(currentQuestion.d);
 }
 
+function forNow() {}
+
 $(".quiz_start_button").click(function () {
   $(".quiz_start_button").addClass("next_question_button");
   $(".quiz_content").show();
 
-  var answer = $(".answer").val();
+  var correctAnswer = $('input[name="answer"]:checked').val();
+  if (correctAnswer == quizData[questionNumber].answer) {
+    score++;
+  }
 
-  if (answer) {
-    if (answer === quizData[questionNumber].answer) {
-      score++;
-    }
+  questionNumber++;
 
-    questionNumber++;
-
-    if (questionNumber < quizData.length) {
-      loadQuestion();
-    } else {
-      alert("You finished the quiz!!");
-    }
+  if (questionNumber < quizData.length) {
+    loadQuestion();
+  } else {
+    alert("You finished the quiz!!. Your score is: " + score);
   }
 });
