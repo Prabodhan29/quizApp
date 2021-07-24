@@ -55,22 +55,37 @@ function loadQuestion() {
   $("#optionD").html(currentQuestion.d);
 }
 
-function forNow() {}
-
 $(".quiz_start_button").click(function () {
-  $(".quiz_start_button").addClass("next_question_button");
+  $(".quiz_start_button").hide();
+  $(".next_question_button").show();
   $(".quiz_content").show();
+  $(".start_again").hide();
+  loadQuestion();
+});
 
+$(".next_question_button").click(function (e) {
+  e.preventDefault();
   var correctAnswer = $('input[name="answer"]:checked').val();
   if (correctAnswer == quizData[questionNumber].answer) {
     score++;
   }
 
   questionNumber++;
-
   if (questionNumber < quizData.length) {
     loadQuestion();
   } else {
-    alert("You finished the quiz!!. Your score is: " + score);
+    $(".quiz_container").hide();
+    $(".score").show();
+    $(".score").html(
+      "<h1> Your score is:  " + score + " / " + questionNumber + "</h1>"
+    );
+    $(".score").addClass("score_text");
+    $(".start_again").show();
   }
+});
+
+$(".start_again").click(function (e) {
+  e.preventDefault();
+  $(".score").hide();
+  location.reload();
 });
