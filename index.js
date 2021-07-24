@@ -69,7 +69,6 @@ $(".next_question_button").click(function (e) {
   if (correctAnswer == quizData[questionNumber].answer) {
     score++;
   }
-
   questionNumber++;
   if (questionNumber < quizData.length) {
     loadQuestion();
